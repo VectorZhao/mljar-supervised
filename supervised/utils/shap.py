@@ -117,6 +117,7 @@ class PlotSHAP:
         )
         fig.tight_layout(pad=2.0)
         fig.savefig(os.path.join(model_file_path, f"{learner_name}_shap_summary.png"))
+        fig.savefig(os.path.join(model_file_path, f"{learner_name}_shap_summary.pdf"))
         plt.close("all")
 
         vals = None
@@ -164,6 +165,11 @@ class PlotSHAP:
             fig.savefig(
                 os.path.join(
                     model_file_path, f"{learner_name}_shap_dependence{file_postfix}.png"
+                )
+            )
+            fig.savefig(
+                os.path.join(
+                    model_file_path, f"{learner_name}_shap_dependence{file_postfix}.pdf"
                 )
             )
             plt.close("all")
@@ -272,6 +278,9 @@ class PlotSHAP:
         fig.savefig(
             os.path.join(model_file_path, f"{learner_name}_shap_worst_decisions.png")
         )
+        fig.savefig(
+            os.path.join(model_file_path, f"{learner_name}_shap_worst_decisions.pdf")
+        )
         plt.close("all")
 
         fig = plt.gcf()
@@ -284,6 +293,9 @@ class PlotSHAP:
         fig.tight_layout(pad=2.0)
         fig.savefig(
             os.path.join(model_file_path, f"{learner_name}_shap_best_decisions.png")
+        )
+        fig.savefig(
+            os.path.join(model_file_path, f"{learner_name}_shap_best_decisions.pdf")
         )
         plt.close("all")
 
@@ -313,6 +325,12 @@ class PlotSHAP:
                     f"{learner_name}_shap_class_{t}_worst_decisions.png",
                 )
             )
+            fig.savefig(
+                os.path.join(
+                    model_file_path,
+                    f"{learner_name}_shap_class_{t}_worst_decisions.pdf",
+                )
+            )
             plt.close("all")
 
             fig = plt.gcf()
@@ -326,6 +344,11 @@ class PlotSHAP:
             fig.savefig(
                 os.path.join(
                     model_file_path, f"{learner_name}_shap_class_{t}_best_decisions.png"
+                )
+            )
+            fig.savefig(
+                os.path.join(
+                    model_file_path, f"{learner_name}_shap_class_{t}_best_decisions.pdf"
                 )
             )
             plt.close("all")
@@ -360,6 +383,12 @@ class PlotSHAP:
                     os.path.join(
                         model_file_path,
                         f"{learner_name}_sample_{i}_{decision_type}_decisions.png",
+                    )
+                )
+                fig.savefig(
+                    os.path.join(
+                        model_file_path,
+                        f"{learner_name}_sample_{i}_{decision_type}_decisions.pdf",
                     )
                 )
                 plt.close("all")
