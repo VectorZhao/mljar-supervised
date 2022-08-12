@@ -222,6 +222,7 @@ class AdditionalPlots:
                 fig = plot.get("figure")
                 title = plot.get("title", "")
                 fig.savefig(os.path.join(model_path, fname))
+                fig.savefig(os.path.join(model_path, fname+'.pdf'))
                 fout.write(f"\n## {title}\n\n")
                 fout.write(f"![{title}]({fname})\n\n")
         except Exception as e:
