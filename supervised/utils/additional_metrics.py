@@ -562,6 +562,7 @@ class AdditionalMetrics:
             ax.set_title("Feature importance")
 
         fig.savefig(os.path.join(model_path, "permutation_importance.png"))
+        fig.savefig(os.path.join(model_path, "permutation_importance.pdf"))
         fout.write("\n\n## Permutation-based Importance\n")
         fout.write(f"![Permutation-based Importance](permutation_importance.png)")
 
@@ -642,6 +643,7 @@ class AdditionalMetrics:
             else:
                 ax.set_title("SHAP feature importance")
             fig.savefig(os.path.join(model_path, "shap_importance.png"))
+            fig.savefig(os.path.join(model_path, "shap_importance.pdf"))
             fout.write("\n\n## SHAP Importance\n")
             fout.write(f"![SHAP Importance](shap_importance.png)")
         except Exception as e:
