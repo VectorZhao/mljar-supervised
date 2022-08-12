@@ -104,8 +104,10 @@ class AutoMLPlots:
             ax.set_title(title)
 
             plt.tight_layout(pad=2.0)
-            plot_path = os.path.join(results_path, AutoMLPlots.features_heatmap_fname + '.pdf')
+            plot_path = os.path.join(results_path, AutoMLPlots.features_heatmap_fname)
+            plot_path_pdf = os.path.join(results_path, AutoMLPlots.features_heatmap_fname + '.pdf')
             plt.savefig(plot_path)
+            plt.savefig(plot_path_pdf)
             plt.close("all")
         except Exception as e:
             pass
@@ -161,10 +163,10 @@ class AutoMLPlots:
             ax.set_title("Spearman Correlation of Models")
 
             plt.tight_layout(pad=2.0)
-            plot_path = os.path.join(
-                results_path, AutoMLPlots.correlation_heatmap_fname + '.pdf'
-            )
+            plot_path = os.path.join(results_path, AutoMLPlots.correlation_heatmap_fname)
+            plot_path_pdf = os.path.join(results_path, AutoMLPlots.correlation_heatmap_fname + '.pdf')
             plt.savefig(plot_path)
+            plt.savefig(plot_path_pdf)
             plt.close("all")
         except Exception as e:
             pass
