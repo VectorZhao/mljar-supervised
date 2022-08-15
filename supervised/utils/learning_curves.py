@@ -19,6 +19,7 @@ MY_COLORS = list(mcolors.TABLEAU_COLORS.values())
 class LearningCurves:
 
     output_file_name = "learning_curves.png"
+    output_pdf_file_name = "learning_curves.pdf"
 
     @staticmethod
     def single_iteration(learner_names, model_path):
@@ -70,7 +71,9 @@ class LearningCurves:
         plt.xticks(rotation=90)
         plt.tight_layout(pad=2.0)
         plot_path = os.path.join(model_path, LearningCurves.output_file_name)
+        pdf_plot_path = os.path.join(model_path, LearningCurves.output_pdf_file_name)
         plt.savefig(plot_path)
+        plt.savefig(pdf_plot_path)
         plt.close("all")
 
     @staticmethod
@@ -128,7 +131,9 @@ class LearningCurves:
 
         plt.tight_layout(pad=2.0)
         plot_path = os.path.join(model_path, LearningCurves.output_file_name)
+        pdf_plot_path = os.path.join(model_path, LearningCurves.output_pdf_file_name)
         plt.savefig(plot_path)
+        plt.savefig(pdf_plot_path)
         plt.close("all")
 
     @staticmethod
@@ -139,5 +144,7 @@ class LearningCurves:
         plt.ylabel(metric_name)
         plt.legend(loc="best")
         plot_path = os.path.join(model_path, LearningCurves.output_file_name)
+        pdf_plot_path = os.path.join(model_path, LearningCurves.output_pdf_file_name)
         plt.savefig(plot_path)
+        plt.savefig(pdf_plot_path)
         plt.close("all")
