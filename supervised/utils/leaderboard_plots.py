@@ -18,7 +18,9 @@ warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 class LeaderboardPlots:
 
     performance_fname = "ldb_performance.png"
+    pdf_performance_fname = "ldb_performance.pdf"
     performance_boxplot_fname = "ldb_performance_boxplot.png"
+    pdf_performance_boxplot_fname = "ldb_performance_boxplot.pdf"
 
     @staticmethod
     def compute(ldb, model_path, fout):
@@ -33,6 +35,8 @@ class LeaderboardPlots:
         plt.tight_layout(pad=2.0)
         plot_path = os.path.join(model_path, LeaderboardPlots.performance_fname)
         plt.savefig(plot_path)
+        pdf_plot_path = os.path.join(model_path, LeaderboardPlots.pdf_performance_fname)
+        plt.savefig(pdf_plot_path)
         plt.close("all")
 
         fout.write("\n\n### AutoML Performance\n")
@@ -54,6 +58,8 @@ class LeaderboardPlots:
         plt.tight_layout(pad=2.0)
         plot_path = os.path.join(model_path, LeaderboardPlots.performance_boxplot_fname)
         plt.savefig(plot_path)
+        pdf_plot_path = os.path.join(model_path, LeaderboardPlots.pdf_performance_boxplot_fname)
+        plt.savefig(pdf_plot_path)
         plt.close("all")
 
         fout.write("\n\n### AutoML Performance Boxplot\n")
